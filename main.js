@@ -8,16 +8,17 @@ const setDate = () => {
   const now = new Date();
 
   const seconds = now.getSeconds();
-  const secondsDegrees = (seconds / 60) * 360 + 90;
-  secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
-
   const minutes = now.getMinutes();
-  const minutesDegrees = (minutes / 60) * 360 + 90;
-  minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
-
   const hours = now.getHours();
-  const hoursDegrees = (hours / 12) * 360 + 90;
-  hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+
+  setTime({ time: seconds, referenceTime: 60, hand: secondHand });
+  setTime({ time: minutes, referenceTime: 60, hand: minuteHand });
+  setTime({ time: hours, referenceTime: 12, hand: hourHand });
+};
+
+const setTime = ({ time, referenceTime, hand }) => {
+  const degrees = (time / referenceTime) * 360 + 90;
+  hand.style.transform = `rotate(${degrees}deg)`;
 };
 
 setInterval(setDate, 1000);
