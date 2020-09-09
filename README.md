@@ -1,6 +1,6 @@
 ## Javascript analog clock
 
-_Minimal and analog clock created following the #javascript30 challenge. You can see a demo [here](https://cterrasid.github.io/clock/)_
+_Minimal and analog clock created following the #javascript30 challenge. You can see a demo [here]( https://cterrasid.github.io/minimal-clock/)_
 
 ### License 📄
 
